@@ -46,5 +46,8 @@ end
 def get_average_age_for_season(data, season)
   data.each do |seasonKey, women|
     if seasonKey == season
-      
+      total = women.reduce {|sum, woman| sum += woman["age"]}
+      return total/women.length
+    end
+  end
 end
